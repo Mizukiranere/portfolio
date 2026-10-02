@@ -17,6 +17,11 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- Ambient Floating Background Glows -->
+  <div class="ambient-glow glow-1"></div>
+  <div class="ambient-glow glow-2"></div>
+  <div class="ambient-glow glow-3"></div>
+
   <!-- Scroll Progress Indicator -->
   <div class="scroll-progress-bar" id="scrollProgress"></div>
 
@@ -56,7 +61,7 @@
     <section class="hero-section" id="home">
       <div class="hero-grid-bg"></div>
       <div class="container hero-container">
-        <div class="hero-content">
+        <div class="hero-content reveal">
           <div class="badge-status">
             <span class="status-pulse"></span>
             <span>Available for new projects & collaborations</span>
@@ -64,7 +69,10 @@
 
           <h1 class="hero-title">
             Crafting Scalable Code & <br>
-            <span class="gradient-text" id="roleText">Exceptional Web Experiences</span>
+            <span class="gradient-text typewriter-wrap">
+              <span id="typewriterText">Exceptional Web Experiences</span>
+              <span class="typewriter-cursor">|</span>
+            </span>
           </h1>
 
           <p class="hero-description">
@@ -72,11 +80,11 @@
           </p>
 
           <div class="hero-actions">
-            <a href="#projects" class="btn btn-primary">
+            <a href="#projects" class="btn btn-primary btn-glow">
               <i data-lucide="layers"></i>
               <span>Lihat Portofolio</span>
             </a>
-            <button class="btn btn-secondary" id="copyEmailBtn" data-email="mizukiranere@users.noreply.github.com">
+            <button class="btn btn-secondary" id="copyEmailBtn">
               <i data-lucide="copy"></i>
               <span>Salin Email</span>
             </button>
@@ -85,7 +93,7 @@
           <!-- Quick Metric Stats -->
           <div class="hero-metrics">
             <div class="metric-item">
-              <span class="metric-number">100%</span>
+              <span class="metric-number counter" data-target="100">0</span><span class="metric-symbol">%</span>
               <span class="metric-label">Clean Architecture</span>
             </div>
             <div class="metric-divider"></div>
@@ -95,14 +103,14 @@
             </div>
             <div class="metric-divider"></div>
             <div class="metric-item">
-              <span class="metric-number">Git & CI/CD</span>
+              <span class="metric-number">CI/CD</span>
               <span class="metric-label">Automated Workflow</span>
             </div>
           </div>
         </div>
 
-        <div class="hero-visual">
-          <div class="code-window">
+        <div class="hero-visual reveal delay-1">
+          <div class="code-window floating-element">
             <div class="window-header">
               <div class="window-dots">
                 <span class="dot dot-red"></span>
@@ -134,12 +142,14 @@
     <!-- Core Principles Section -->
     <section class="section principles-section" id="about">
       <div class="container">
-        <div class="section-badge">How I Work</div>
-        <h2 class="section-title">Filosofi & Pendekatan Rekayasa Perangkat Lunak</h2>
-        <p class="section-subtitle">Setiap baris kode ditulis dengan tujuan, ketelitian, dan standar industri modern.</p>
+        <div class="reveal text-center">
+          <div class="section-badge">How I Work</div>
+          <h2 class="section-title">Filosofi & Pendekatan Rekayasa Perangkat Lunak</h2>
+          <p class="section-subtitle">Setiap baris kode ditulis dengan tujuan, ketelitian, dan standar industri modern.</p>
+        </div>
 
         <div class="principles-grid">
-          <div class="principle-card">
+          <div class="principle-card spotlight-card reveal delay-1">
             <div class="card-icon-wrapper">
               <i data-lucide="shield-check"></i>
             </div>
@@ -147,7 +157,7 @@
             <p>Menerapkan prinsip SOLID, modularitas tinggi, dan dokumentasi yang jelas agar kode mudah dipelihara dan dikembangkan dalam jangka panjang.</p>
           </div>
 
-          <div class="principle-card">
+          <div class="principle-card spotlight-card reveal delay-2">
             <div class="card-icon-wrapper">
               <i data-lucide="gauge"></i>
             </div>
@@ -155,7 +165,7 @@
             <p>Optimasi kecepatan *load time*, efisiensi memori, dan aksesibilitas untuk menghasilkan skor performa terbaik di setiap perangkat.</p>
           </div>
 
-          <div class="principle-card">
+          <div class="principle-card spotlight-card reveal delay-3">
             <div class="card-icon-wrapper">
               <i data-lucide="git-merge"></i>
             </div>
@@ -169,13 +179,15 @@
     <!-- Skills & Technologies -->
     <section class="section skills-section" id="skills">
       <div class="container">
-        <div class="section-badge">Capabilities</div>
-        <h2 class="section-title">Teknologi & Alat Pengembang</h2>
-        <p class="section-subtitle">Kombinasi teknologi yang saya kuasai untuk membangun produk digital kelas dunia.</p>
+        <div class="reveal text-center">
+          <div class="section-badge">Capabilities</div>
+          <h2 class="section-title">Teknologi & Alat Pengembang</h2>
+          <p class="section-subtitle">Kombinasi teknologi yang saya kuasai untuk membangun produk digital kelas dunia.</p>
+        </div>
 
         <div class="skills-grid">
           <!-- Category 1 -->
-          <div class="skill-box">
+          <div class="skill-box spotlight-card reveal delay-1">
             <div class="skill-box-header">
               <i data-lucide="layout"></i>
               <h3>Frontend Engineering</h3>
@@ -191,7 +203,7 @@
           </div>
 
           <!-- Category 2 -->
-          <div class="skill-box">
+          <div class="skill-box spotlight-card reveal delay-2">
             <div class="skill-box-header">
               <i data-lucide="server"></i>
               <h3>Backend & Database</h3>
@@ -206,7 +218,7 @@
           </div>
 
           <!-- Category 3 -->
-          <div class="skill-box">
+          <div class="skill-box spotlight-card reveal delay-3">
             <div class="skill-box-header">
               <i data-lucide="settings"></i>
               <h3>DevOps & Environment</h3>
@@ -226,12 +238,14 @@
     <!-- Featured Projects Section with Filter -->
     <section class="section projects-section" id="projects">
       <div class="container">
-        <div class="section-badge">Portfolio</div>
-        <h2 class="section-title">Karya & Proyek Terpilih</h2>
-        <p class="section-subtitle">Studi kasus dan repositori kode yang dibangun dengan pendekatan rekayasa modern.</p>
+        <div class="reveal text-center">
+          <div class="section-badge">Portfolio</div>
+          <h2 class="section-title">Karya & Proyek Terpilih</h2>
+          <p class="section-subtitle">Studi kasus dan repositori kode yang dibangun dengan pendekatan rekayasa modern.</p>
+        </div>
 
         <!-- Project Filter Controls -->
-        <div class="project-filters">
+        <div class="project-filters reveal">
           <button class="filter-btn active" data-filter="all">Semua Proyek</button>
           <button class="filter-btn" data-filter="web">Web & Frontend</button>
           <button class="filter-btn" data-filter="backend">Backend & Tools</button>
@@ -239,7 +253,7 @@
 
         <div class="projects-grid">
           <!-- Project 1 -->
-          <article class="project-card" data-category="web">
+          <article class="project-card spotlight-card reveal delay-1" data-category="web">
             <div class="project-card-banner">
               <div class="banner-tag">Featured</div>
               <div class="banner-icons">
@@ -266,7 +280,7 @@
           </article>
 
           <!-- Project 2 -->
-          <article class="project-card" data-category="web">
+          <article class="project-card spotlight-card reveal delay-2" data-category="web">
             <div class="project-card-banner">
               <div class="banner-tag">Open Source</div>
               <div class="banner-icons">
@@ -290,7 +304,7 @@
           </article>
 
           <!-- Project 3 -->
-          <article class="project-card" data-category="backend">
+          <article class="project-card spotlight-card reveal delay-3" data-category="backend">
             <div class="project-card-banner">
               <div class="banner-tag">API & Core</div>
               <div class="banner-icons">
@@ -319,32 +333,34 @@
     <!-- Experience / Milestones Journey -->
     <section class="section journey-section" id="experience">
       <div class="container">
-        <div class="section-badge">Timeline</div>
-        <h2 class="section-title">Perjalanan & Milestone Pengembang</h2>
-        <p class="section-subtitle">Langkah konsisten dalam memperdalam keahlian rekayasa sistem.</p>
+        <div class="reveal text-center">
+          <div class="section-badge">Timeline</div>
+          <h2 class="section-title">Perjalanan & Milestone Pengembang</h2>
+          <p class="section-subtitle">Langkah konsisten dalam memperdalam keahlian rekayasa sistem.</p>
+        </div>
 
         <div class="timeline">
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
+          <div class="timeline-item reveal delay-1">
+            <div class="timeline-dot pulse-dot"></div>
+            <div class="timeline-content spotlight-card">
               <span class="timeline-date">2026 — Sekarang</span>
               <h3>Full-Stack Development & Open Source</h3>
               <p>Membangun proyek berbasis web modern, mengintegrasikan alur otomatisasi GitHub Actions, serta berkontribusi pada pengembangan ekosistem open-source.</p>
             </div>
           </div>
 
-          <div class="timeline-item">
+          <div class="timeline-item reveal delay-2">
             <div class="timeline-dot"></div>
-            <div class="timeline-content">
+            <div class="timeline-content spotlight-card">
               <span class="timeline-date">2025</span>
               <h3>Deep Dive: Architecture & Performance</h3>
               <p>Fokus mendalami arsitektur berbasis komponen, optimasi waktu respon server, dan perancangan basis data relasional yang skalabel.</p>
             </div>
           </div>
 
-          <div class="timeline-item">
+          <div class="timeline-item reveal delay-3">
             <div class="timeline-dot"></div>
-            <div class="timeline-content">
+            <div class="timeline-content spotlight-card">
               <span class="timeline-date">2024</span>
               <h3>Foundations in Algorithms & Core Languages</h3>
               <p>Membangun fondasi kuat dalam struktur data, algoritma, pemrograman berorientasi objek (OOP), dan standar web modern.</p>
@@ -357,7 +373,7 @@
     <!-- Contact & Connect Section -->
     <section class="section contact-section" id="contact">
       <div class="container">
-        <div class="contact-box">
+        <div class="contact-box spotlight-card reveal">
           <div class="contact-header">
             <div class="section-badge">Get In Touch</div>
             <h2 class="section-title">Punya Ide Proyek Menarik?</h2>
