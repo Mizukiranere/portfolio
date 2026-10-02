@@ -3,240 +3,423 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mizukiranere | Developer Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Mizukiranere | Software Engineer & Creative Developer</title>
+  <meta name="description" content="Personal portfolio of Mizukiranere - Software Engineer specializing in modern web applications, scalable backends, and clean UI engineering.">
+  
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-  <!-- Lucide icons via unpkg -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Header / Navigation -->
-  <nav class="navbar">
+  <!-- Scroll Progress Indicator -->
+  <div class="scroll-progress-bar" id="scrollProgress"></div>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
     <div class="nav-container">
       <a href="#home" class="nav-logo">
-        <span class="logo-bracket">&lt;</span>Mizuki<span class="logo-dot">.</span><span class="logo-bracket">/&gt;</span>
+        <span class="logo-symbol">&lt;</span>Mizuki<span class="logo-accent">.dev</span><span class="logo-symbol">/&gt;</span>
       </a>
-      <ul class="nav-links" id="nav-links">
+
+      <ul class="nav-links" id="navLinks">
         <li><a href="#home" class="nav-link active">Home</a></li>
         <li><a href="#about" class="nav-link">About</a></li>
         <li><a href="#skills" class="nav-link">Skills</a></li>
         <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#experience" class="nav-link">Journey</a></li>
         <li><a href="#contact" class="nav-link">Contact</a></li>
       </ul>
+
       <div class="nav-actions">
-        <a href="https://github.com/Mizukiranere" target="_blank" rel="noopener noreferrer" class="btn btn-outline nav-btn">
-          <i data-lucide="github"></i> GitHub
+        <a href="https://github.com/Mizukiranere" target="_blank" rel="noopener noreferrer" class="btn-icon" title="Kunjungi GitHub">
+          <i data-lucide="github"></i>
         </a>
-        <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Navigation">
+        <a href="#contact" class="btn btn-primary nav-cta">
+          <span>Let's Connect</span>
+          <i data-lucide="arrow-up-right"></i>
+        </a>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Buka Menu Navigasi">
           <i data-lucide="menu"></i>
         </button>
       </div>
     </div>
   </nav>
 
-  <!-- Hero Section -->
-  <section class="hero-section" id="home">
-    <div class="container hero-content">
-      <div class="badge-status">
-        <span class="status-indicator"></span> Tersedia untuk proyek & kolaborasi
-      </div>
-      <h1 class="hero-title">
-        Halo, Saya <span class="gradient-text">Mizuki</span> 👋<br>
-        <span class="typing-text">Software & Web Developer</span>
-      </h1>
-      <p class="hero-desc">
-        Membangun aplikasi web modern, efisien, dan ramah pengguna dengan performa tinggi. Tertarik pada eksplorasi teknologi baru dan open-source.
-      </p>
-      <div class="hero-cta">
-        <a href="#projects" class="btn btn-primary">
-          <i data-lucide="code-2"></i> Lihat Proyek
-        </a>
-        <a href="#contact" class="btn btn-secondary">
-          <i data-lucide="send"></i> Hubungi Saya
-        </a>
-      </div>
-    </div>
-    <div class="hero-bg-glow"></div>
-  </section>
-
-  <!-- About Section -->
-  <section class="section about-section" id="about">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">Tentang Saya</h2>
-        <p class="section-subtitle">Dedikasi untuk menciptakan solusi digital yang elegan</p>
-      </div>
-      <div class="about-grid">
-        <div class="about-card">
-          <div class="card-icon"><i data-lucide="terminal"></i></div>
-          <h3>Clean Code & Best Practices</h3>
-          <p>Selalu memprioritaskan arsitektur kode yang terstruktur, mudah dirawat, dan skalabel.</p>
-        </div>
-        <div class="about-card">
-          <div class="card-icon"><i data-lucide="zap"></i></div>
-          <h3>Performa Cepat</h3>
-          <p>Optimasi kecepatan aplikasi untuk menghadirkan pengalaman pengguna yang responsif tanpa hambatan.</p>
-        </div>
-        <div class="about-card">
-          <div class="card-icon"><i data-lucide="sparkles"></i></div>
-          <h3>Pembelajar Cepat</h3>
-          <p>Terus beradaptasi dengan stack teknologi modern dan antusias mengeksplorasi ekosistem baru.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Skills Section -->
-  <section class="section skills-section" id="skills">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">Tech Stack & Tools</h2>
-        <p class="section-subtitle">Keahlian dan perangkat yang saya gunakan dalam pengembangan</p>
-      </div>
-      <div class="skills-wrapper">
-        <div class="skill-category">
-          <h3 class="category-title"><i data-lucide="layout"></i> Frontend</h3>
-          <div class="skill-badges">
-            <span class="skill-badge"><i data-lucide="code"></i> HTML5 / CSS3</span>
-            <span class="skill-badge"><i data-lucide="file-code"></i> JavaScript (ES6+)</span>
-            <span class="skill-badge"><i data-lucide="file-code-2"></i> TypeScript</span>
-            <span class="skill-badge"><i data-lucide="layers"></i> React.js</span>
-            <span class="skill-badge"><i data-lucide="palette"></i> Tailwind CSS</span>
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+      <div class="hero-grid-bg"></div>
+      <div class="container hero-container">
+        <div class="hero-content">
+          <div class="badge-status">
+            <span class="status-pulse"></span>
+            <span>Available for new projects & collaborations</span>
           </div>
-        </div>
 
-        <div class="skill-category">
-          <h3 class="category-title"><i data-lucide="server"></i> Backend & Database</h3>
-          <div class="skill-badges">
-            <span class="skill-badge"><i data-lucide="box"></i> Node.js</span>
-            <span class="skill-badge"><i data-lucide="cpu"></i> Python</span>
-            <span class="skill-badge"><i data-lucide="database"></i> PostgreSQL / MySQL</span>
-            <span class="skill-badge"><i data-lucide="hard-drive"></i> RESTful API</span>
+          <h1 class="hero-title">
+            Crafting Scalable Code & <br>
+            <span class="gradient-text" id="roleText">Exceptional Web Experiences</span>
+          </h1>
+
+          <p class="hero-description">
+            Hi, I’m <strong>Mizuki</strong> — a Software Engineer & Web Developer. I build high-performance web applications, robust APIs, and modern digital interfaces with an obsession for clean architecture and speed.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-primary">
+              <i data-lucide="layers"></i>
+              <span>Lihat Portofolio</span>
+            </a>
+            <button class="btn btn-secondary" id="copyEmailBtn" data-email="mizukiranere@users.noreply.github.com">
+              <i data-lucide="copy"></i>
+              <span>Salin Email</span>
+            </button>
           </div>
-        </div>
 
-        <div class="skill-category">
-          <h3 class="category-title"><i data-lucide="wrench"></i> Tools & Workflow</h3>
-          <div class="skill-badges">
-            <span class="skill-badge"><i data-lucide="git-branch"></i> Git</span>
-            <span class="skill-badge"><i data-lucide="github"></i> GitHub & CLI</span>
-            <span class="skill-badge"><i data-lucide="monitor"></i> VS Code</span>
-            <span class="skill-badge"><i data-lucide="container"></i> Docker</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Projects Section -->
-  <section class="section projects-section" id="projects">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">Proyek Pilihan</h2>
-        <p class="section-subtitle">Beberapa karya dan aplikasi yang telah dibangun</p>
-      </div>
-      <div class="projects-grid">
-        <!-- Project Card 1 -->
-        <article class="project-card">
-          <div class="project-header">
-            <div class="folder-icon"><i data-lucide="folder"></i></div>
-            <div class="project-links">
-              <a href="https://github.com/Mizukiranere/portfolio" target="_blank" aria-label="GitHub Repo"><i data-lucide="github"></i></a>
-              <a href="#" aria-label="Live Demo"><i data-lucide="external-link"></i></a>
+          <!-- Quick Metric Stats -->
+          <div class="hero-metrics">
+            <div class="metric-item">
+              <span class="metric-number">100%</span>
+              <span class="metric-label">Clean Architecture</span>
+            </div>
+            <div class="metric-divider"></div>
+            <div class="metric-item">
+              <span class="metric-number">Modern</span>
+              <span class="metric-label">Tech Stack</span>
+            </div>
+            <div class="metric-divider"></div>
+            <div class="metric-item">
+              <span class="metric-number">Git & CI/CD</span>
+              <span class="metric-label">Automated Workflow</span>
             </div>
           </div>
-          <h3 class="project-title">Developer Portfolio</h3>
-          <p class="project-desc">
-            Website portofolio responsif bertema dark mode modern dengan performa tinggi, animasi dinamis, dan tata letak yang bersih.
-          </p>
-          <div class="project-tags">
-            <span>HTML5</span>
-            <span>CSS3 Modern</span>
-            <span>JavaScript</span>
-            <span>GitHub Pages</span>
-          </div>
-        </article>
+        </div>
 
-        <!-- Project Card 2 -->
-        <article class="project-card">
-          <div class="project-header">
-            <div class="folder-icon"><i data-lucide="folder"></i></div>
-            <div class="project-links">
-              <a href="https://github.com/Mizukiranere" target="_blank" aria-label="GitHub Repo"><i data-lucide="github"></i></a>
+        <div class="hero-visual">
+          <div class="code-window">
+            <div class="window-header">
+              <div class="window-dots">
+                <span class="dot dot-red"></span>
+                <span class="dot dot-yellow"></span>
+                <span class="dot dot-green"></span>
+              </div>
+              <div class="window-title">developer.ts</div>
+            </div>
+            <div class="window-body">
+              <pre><code><span class="code-keyword">const</span> <span class="code-var">developer</span> = {
+  <span class="code-key">name</span>: <span class="code-str">"Mizukiranere"</span>,
+  <span class="code-key">role</span>: <span class="code-str">"Full-Stack Software Engineer"</span>,
+  <span class="code-key">coreStrengths</span>: [
+    <span class="code-str">"Scalable Architecture"</span>,
+    <span class="code-str">"Modern Web Design"</span>,
+    <span class="code-str">"API Development"</span>
+  ],
+  <span class="code-key">status</span>: <span class="code-str">"Ready to build greatness"</span>,
+  <span class="code-function">passion</span>: () => {
+    <span class="code-keyword">return</span> <span class="code-str">"Clean code & happy users"</span>;
+  }
+};</code></pre>
             </div>
           </div>
-          <h3 class="project-title">Web Application Starter</h3>
-          <p class="project-desc">
-            Starter template full-stack modern dengan sistem autentikasi, database terintegrasi, dan arsitektur API yang siap produksi.
-          </p>
-          <div class="project-tags">
-            <span>TypeScript</span>
-            <span>Node.js</span>
-            <span>REST API</span>
-          </div>
-        </article>
-
-        <!-- Project Card 3 -->
-        <article class="project-card">
-          <div class="project-header">
-            <div class="folder-icon"><i data-lucide="folder"></i></div>
-            <div class="project-links">
-              <a href="https://github.com/Mizukiranere" target="_blank" aria-label="GitHub Repo"><i data-lucide="github"></i></a>
-            </div>
-          </div>
-          <h3 class="project-title">Automation & CLI Tools</h3>
-          <p class="project-desc">
-            Kumpulan script otomasi dan utilitas baris perintah untuk mempercepat alur kerja pengembang harian.
-          </p>
-          <div class="project-tags">
-            <span>Python</span>
-            <span>Shell</span>
-            <span>Automation</span>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section class="section contact-section" id="contact">
-    <div class="container contact-container">
-      <div class="section-header">
-        <h2 class="section-title">Mari Terhubung</h2>
-        <p class="section-subtitle">Punya proyek menarik atau ingin berdiskusi? Pintu saya selalu terbuka!</p>
-      </div>
-      <div class="contact-card">
-        <p class="contact-text">
-          Silakan hubungi saya melalui profil GitHub atau kirim pesan untuk berdiskusi seputar peluang kolaborasi.
-        </p>
-        <div class="contact-actions">
-          <a href="https://github.com/Mizukiranere" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-            <i data-lucide="github"></i> Kunjungi GitHub
-          </a>
-          <button class="btn btn-secondary" onclick="alert('Anda dapat menambahkan email Anda di file index.html')">
-            <i data-lucide="mail"></i> Hubungi via Email
-          </button>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <!-- Core Principles Section -->
+    <section class="section principles-section" id="about">
+      <div class="container">
+        <div class="section-badge">How I Work</div>
+        <h2 class="section-title">Filosofi & Pendekatan Rekayasa Perangkat Lunak</h2>
+        <p class="section-subtitle">Setiap baris kode ditulis dengan tujuan, ketelitian, dan standar industri modern.</p>
+
+        <div class="principles-grid">
+          <div class="principle-card">
+            <div class="card-icon-wrapper">
+              <i data-lucide="shield-check"></i>
+            </div>
+            <h3>Clean & Maintainable Code</h3>
+            <p>Menerapkan prinsip SOLID, modularitas tinggi, dan dokumentasi yang jelas agar kode mudah dipelihara dan dikembangkan dalam jangka panjang.</p>
+          </div>
+
+          <div class="principle-card">
+            <div class="card-icon-wrapper">
+              <i data-lucide="gauge"></i>
+            </div>
+            <h3>High Performance & SEO</h3>
+            <p>Optimasi kecepatan *load time*, efisiensi memori, dan aksesibilitas untuk menghasilkan skor performa terbaik di setiap perangkat.</p>
+          </div>
+
+          <div class="principle-card">
+            <div class="card-icon-wrapper">
+              <i data-lucide="git-merge"></i>
+            </div>
+            <h3>Modern CI/CD & Automation</h3>
+            <p>Memanfaatkan GitHub Actions, alur kerja branch yang rapi, dan integrasi pengujian otomatis demi perilisan yang aman dan cepat.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills & Technologies -->
+    <section class="section skills-section" id="skills">
+      <div class="container">
+        <div class="section-badge">Capabilities</div>
+        <h2 class="section-title">Teknologi & Alat Pengembang</h2>
+        <p class="section-subtitle">Kombinasi teknologi yang saya kuasai untuk membangun produk digital kelas dunia.</p>
+
+        <div class="skills-grid">
+          <!-- Category 1 -->
+          <div class="skill-box">
+            <div class="skill-box-header">
+              <i data-lucide="layout"></i>
+              <h3>Frontend Engineering</h3>
+            </div>
+            <div class="skill-pills">
+              <span class="skill-pill"><i data-lucide="code"></i> HTML5 / Modern CSS3</span>
+              <span class="skill-pill"><i data-lucide="terminal"></i> JavaScript (ES6+)</span>
+              <span class="skill-pill"><i data-lucide="file-code"></i> TypeScript</span>
+              <span class="skill-pill"><i data-lucide="atom"></i> React.js</span>
+              <span class="skill-pill"><i data-lucide="palette"></i> Tailwind CSS</span>
+              <span class="skill-pill"><i data-lucide="smartphone"></i> Responsive & Mobile-First</span>
+            </div>
+          </div>
+
+          <!-- Category 2 -->
+          <div class="skill-box">
+            <div class="skill-box-header">
+              <i data-lucide="server"></i>
+              <h3>Backend & Database</h3>
+            </div>
+            <div class="skill-pills">
+              <span class="skill-pill"><i data-lucide="box"></i> Node.js</span>
+              <span class="skill-pill"><i data-lucide="cpu"></i> Python</span>
+              <span class="skill-pill"><i data-lucide="network"></i> RESTful API Design</span>
+              <span class="skill-pill"><i data-lucide="database"></i> PostgreSQL / MySQL</span>
+              <span class="skill-pill"><i data-lucide="lock"></i> JWT & Authentication</span>
+            </div>
+          </div>
+
+          <!-- Category 3 -->
+          <div class="skill-box">
+            <div class="skill-box-header">
+              <i data-lucide="settings"></i>
+              <h3>DevOps & Environment</h3>
+            </div>
+            <div class="skill-pills">
+              <span class="skill-pill"><i data-lucide="git-branch"></i> Git & Version Control</span>
+              <span class="skill-pill"><i data-lucide="github"></i> GitHub CLI & Actions</span>
+              <span class="skill-pill"><i data-lucide="container"></i> Docker Basics</span>
+              <span class="skill-pill"><i data-lucide="cloud"></i> Cloud Deployment</span>
+              <span class="skill-pill"><i data-lucide="terminal"></i> Bash & PowerShell</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Projects Section with Filter -->
+    <section class="section projects-section" id="projects">
+      <div class="container">
+        <div class="section-badge">Portfolio</div>
+        <h2 class="section-title">Karya & Proyek Terpilih</h2>
+        <p class="section-subtitle">Studi kasus dan repositori kode yang dibangun dengan pendekatan rekayasa modern.</p>
+
+        <!-- Project Filter Controls -->
+        <div class="project-filters">
+          <button class="filter-btn active" data-filter="all">Semua Proyek</button>
+          <button class="filter-btn" data-filter="web">Web & Frontend</button>
+          <button class="filter-btn" data-filter="backend">Backend & Tools</button>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Project 1 -->
+          <article class="project-card" data-category="web">
+            <div class="project-card-banner">
+              <div class="banner-tag">Featured</div>
+              <div class="banner-icons">
+                <a href="https://github.com/Mizukiranere/portfolio" target="_blank" rel="noopener noreferrer" class="icon-link" title="Source Code">
+                  <i data-lucide="github"></i>
+                </a>
+                <a href="https://mizukiranere.github.io/portfolio/" target="_blank" rel="noopener noreferrer" class="icon-link" title="Live Preview">
+                  <i data-lucide="external-link"></i>
+                </a>
+              </div>
+            </div>
+            <div class="project-card-body">
+              <h3 class="project-heading">Mizuki Developer Portfolio</h3>
+              <p class="project-summary">
+                Website portofolio profesional bertema dark mode glassmorphism, dilengkapi animasi mikro interaktif, indikator scroll progress, dan performa tinggi tanpa framework bloated.
+              </p>
+              <div class="project-tech-tags">
+                <span>HTML5 Semantic</span>
+                <span>Vanilla CSS3</span>
+                <span>JavaScript ES6</span>
+                <span>GitHub Pages CI</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2 -->
+          <article class="project-card" data-category="web">
+            <div class="project-card-banner">
+              <div class="banner-tag">Open Source</div>
+              <div class="banner-icons">
+                <a href="https://github.com/Mizukiranere" target="_blank" rel="noopener noreferrer" class="icon-link" title="Source Code">
+                  <i data-lucide="github"></i>
+                </a>
+              </div>
+            </div>
+            <div class="project-card-body">
+              <h3 class="project-heading">Enterprise Dashboard UI</h3>
+              <p class="project-summary">
+                Konsep antarmuka analitik bisnis dengan visualisasi data interaktif, mode kontras tinggi, dan tata letak grid modular yang fleksibel untuk berbagai ukuran layar.
+              </p>
+              <div class="project-tech-tags">
+                <span>React.js</span>
+                <span>TypeScript</span>
+                <span>Tailwind CSS</span>
+                <span>Recharts</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3 -->
+          <article class="project-card" data-category="backend">
+            <div class="project-card-banner">
+              <div class="banner-tag">API & Core</div>
+              <div class="banner-icons">
+                <a href="https://github.com/Mizukiranere" target="_blank" rel="noopener noreferrer" class="icon-link" title="Source Code">
+                  <i data-lucide="github"></i>
+                </a>
+              </div>
+            </div>
+            <div class="project-card-body">
+              <h3 class="project-heading">Cloud API & Automation Service</h3>
+              <p class="project-summary">
+                Microservice backend tangguh untuk otomatisasi sinkronisasi data, validasi payload JSON secara ketat, serta mekanisme rate limiting dan logging terpusat.
+              </p>
+              <div class="project-tech-tags">
+                <span>Node.js</span>
+                <span>Express</span>
+                <span>PostgreSQL</span>
+                <span>Docker</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience / Milestones Journey -->
+    <section class="section journey-section" id="experience">
+      <div class="container">
+        <div class="section-badge">Timeline</div>
+        <h2 class="section-title">Perjalanan & Milestone Pengembang</h2>
+        <p class="section-subtitle">Langkah konsisten dalam memperdalam keahlian rekayasa sistem.</p>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-date">2026 — Sekarang</span>
+              <h3>Full-Stack Development & Open Source</h3>
+              <p>Membangun proyek berbasis web modern, mengintegrasikan alur otomatisasi GitHub Actions, serta berkontribusi pada pengembangan ekosistem open-source.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-date">2025</span>
+              <h3>Deep Dive: Architecture & Performance</h3>
+              <p>Fokus mendalami arsitektur berbasis komponen, optimasi waktu respon server, dan perancangan basis data relasional yang skalabel.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-date">2024</span>
+              <h3>Foundations in Algorithms & Core Languages</h3>
+              <p>Membangun fondasi kuat dalam struktur data, algoritma, pemrograman berorientasi objek (OOP), dan standar web modern.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact & Connect Section -->
+    <section class="section contact-section" id="contact">
+      <div class="container">
+        <div class="contact-box">
+          <div class="contact-header">
+            <div class="section-badge">Get In Touch</div>
+            <h2 class="section-title">Punya Ide Proyek Menarik?</h2>
+            <p class="section-subtitle">Mari berdiskusi tentang bagaimana kita bisa bekerja sama untuk menciptakan solusi digital terbaik.</p>
+          </div>
+
+          <div class="contact-methods">
+            <a href="https://github.com/Mizukiranere" target="_blank" rel="noopener noreferrer" class="contact-method-card">
+              <div class="method-icon"><i data-lucide="github"></i></div>
+              <div class="method-info">
+                <h4>GitHub</h4>
+                <p>@Mizukiranere</p>
+              </div>
+              <i data-lucide="arrow-up-right" class="method-arrow"></i>
+            </a>
+
+            <div class="contact-method-card copy-trigger" id="emailCard">
+              <div class="method-icon"><i data-lucide="mail"></i></div>
+              <div class="method-info">
+                <h4>Direct Email</h4>
+                <p id="emailDisplay">Salin email kontak</p>
+              </div>
+              <i data-lucide="copy" class="method-arrow"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <!-- Footer -->
   <footer class="footer">
-    <div class="container footer-content">
-      <p>&copy; 2026 Mizukiranere. Dibangun dengan fokus & dedikasi.</p>
-      <div class="footer-links">
-        <a href="#home">Back to top ↑</a>
+    <div class="container footer-layout">
+      <div class="footer-brand">
+        <span class="footer-logo">&lt;Mizuki.dev /&gt;</span>
+        <p>Software Engineer dedicated to precision, performance, and clean design.</p>
+      </div>
+
+      <div class="footer-right">
+        <div class="footer-nav">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <p class="copyright">&copy; 2026 Mizukiranere. All rights reserved.</p>
       </div>
     </div>
   </footer>
 
+  <!-- Toast Notification Popup -->
+  <div class="toast-notification" id="toastNotification">
+    <i data-lucide="check-circle" class="toast-icon"></i>
+    <span class="toast-message" id="toastMessage">Teks berhasil disalin!</span>
+  </div>
+
+  <!-- Back To Top Button -->
+  <button class="back-to-top" id="backToTop" aria-label="Kembali ke atas">
+    <i data-lucide="chevron-up"></i>
+  </button>
+
   <script src="script.js"></script>
-  <script>
-    // Initialize Lucide icons
-    lucide.createIcons();
-  </script>
 </body>
 </html>
